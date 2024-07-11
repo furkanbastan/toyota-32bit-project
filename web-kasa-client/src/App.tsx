@@ -1,5 +1,12 @@
+import { AppLoading } from "./components/app-loading";
+import { StyleProvider } from "./utils/StyleProvider";
+
 function App() {
-  return <div>this is app component</div>;
+  return (
+    <StyleProvider>
+      <AppLoading />
+    </StyleProvider>
+  );
 }
 
 export { App };
