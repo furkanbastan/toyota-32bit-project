@@ -1,5 +1,7 @@
+import { LoginPageContainer } from "../containers/login-page-container";
+
 function LoginPage() {
-  return <div>login page</div>;
+  return <LoginPageContainer />;
 }
 
 export { LoginPage };
