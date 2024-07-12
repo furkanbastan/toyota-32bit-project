@@ -27,7 +27,6 @@ const ThemeContext = React.createContext<IThemeContext>({});
 function ThemeContextProvider(props: ProviderProps) {
   const colorScheme = useColorScheme();
   const translation = useTranslation(undefined, { keyPrefix: "theme" });
-console.log(translation);
 
   const context: IThemeContext = {
     state: {
