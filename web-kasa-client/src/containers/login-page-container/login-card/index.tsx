@@ -16,13 +16,10 @@ import Link from "@mui/joy/Link";
 
 import * as authService from "../../../services/AuthService";
 import { LoginModel } from "../../../models/LoginModel";
-import { useKeyboardActions } from "../../../contexts/KeyboardContext";
 import { useAuthActions } from "../../../contexts/AuthContext";
 import * as S from "./styled";
 
 function LoginCard() {
-  const keyboardActions = useKeyboardActions();
-
   const loginForm = useForm<LoginModel>({
     defaultValues: {
       usercode: "",
@@ -30,7 +27,7 @@ function LoginCard() {
     },
   });
 
-  const loginMutation = authService.login();
+  const loginMutation = authService.loginMutation();
 
   const authActions = useAuthActions();
 
@@ -39,20 +36,6 @@ function LoginCard() {
   const handleSubmitLoginForm: SubmitHandler<LoginModel> = (data) => {
     loginMutation.trigger(data);
   };
-
-  function handleClickUsercode() {
-    keyboardActions.handleClickInput({
-      value: loginForm.getValues("usercode"),
-      setValue: (newValue: string) => loginForm.setValue("usercode", newValue),
-    });
-  }
-
-  function handleClickPassword() {
-    keyboardActions.handleClickInput({
-      value: loginForm.getValues("password"),
-      setValue: (newValue: string) => loginForm.setValue("password", newValue),
-    });
-  }
 
   React.useEffect(() => {
     if (loginMutation.data !== undefined && loginMutation.data.isSuccess) {
@@ -95,7 +78,6 @@ function LoginCard() {
                 message: t("usercode-required"),
               },
             })}
-            onClick={handleClickUsercode}
             disabled={loginMutation.isMutating}
             placeholder={t("usercode-placeholder")}
           />
@@ -120,7 +102,6 @@ function LoginCard() {
                 message: t("password-min"),
               },
             })}
-            onClick={handleClickPassword}
             disabled={loginMutation.isMutating}
             placeholder={t("password-placeholder")}
           />
