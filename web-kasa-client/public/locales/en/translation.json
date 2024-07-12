@@ -1,0 +1,10 @@
+{
+  "langs": {
+    "tr": "Turkish",
+    "en": "English"
+  },
+  "theme": {
+    "light": "Light Theme",
+    "dark": "Dark Theme"
+  }
+}
