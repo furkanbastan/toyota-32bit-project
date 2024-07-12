@@ -1,6 +1,6 @@
 import { styled } from "@mui/joy";
 
-export const Logo = styled("div")(({ theme }) => ({
+export const AppLogo = styled("div")(({ theme }) => ({
   display: "flex",
   alignItems: "center",
 

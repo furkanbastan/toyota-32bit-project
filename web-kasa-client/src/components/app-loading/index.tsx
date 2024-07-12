@@ -1,11 +1,11 @@
 import CircularProgress from "@mui/joy/CircularProgress";
-import { Logo } from "../logo";
+import { AppLogo } from "../app-logo";
 import * as S from "./styled";
 
 function AppLoading() {
   return (
     <S.AppLoading>
-      <Logo height={40} />
+      <AppLogo height={40} />
       <CircularProgress size="sm" variant="plain" color="neutral" />
     </S.AppLoading>
   );

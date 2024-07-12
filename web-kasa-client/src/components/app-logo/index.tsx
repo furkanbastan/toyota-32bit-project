@@ -1,15 +1,15 @@
 import { Typography } from "@mui/joy";
 import * as S from "./styled";
 
-interface LogoProps {
+interface AppLogoProps {
   height?: number;
 }
 
-function Logo(props: LogoProps) {
+function AppLogo(props: AppLogoProps) {
   const height = props.height === undefined ? 30 : props.height;
 
   return (
-    <S.Logo>
+    <S.AppLogo>
       <svg
         height={height}
         width={height}
@@ -49,8 +49,8 @@ function Logo(props: LogoProps) {
       <Typography level="h2" fontWeight="xl" fontSize={height}>
         eb/kasa
       </Typography>
-    </S.Logo>
+    </S.AppLogo>
   );
 }
 
-export { Logo };
+export { AppLogo };
