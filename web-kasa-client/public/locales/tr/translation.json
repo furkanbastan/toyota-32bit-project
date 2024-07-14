@@ -6,5 +6,20 @@
   "theme": {
     "light": "Açık Tema",
     "dark": "Koyu Tema"
+  },
+  "login-page": {
+    "login": "Giriş Yap",
+    "have-an-account": "Hesabınız yok mu?",
+    "register": "Kayıt ol!",
+    "error-message": "Kullanıcı Kodu veya Şifre Yanlış!",
+    "usercode": "Kullanıcı Kodu",
+    "usercode-placeholder": "Kullanıcı kodunuzu giriniz.",
+    "usercode-required": "Kullanıcı kodu boş olamaz!",
+    "password": "Şifre",
+    "password-placeholder": "•••••••••",
+    "password-required": "Şifre boş olamaz.",
+    "password-min": "Şifre en az 6 haneli olmalı.",
+    "remember-me": "Beni hatırla!",
+    "login-button": "Giriş Yap"
   }
 }

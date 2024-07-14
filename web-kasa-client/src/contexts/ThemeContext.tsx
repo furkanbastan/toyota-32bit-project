@@ -16,15 +16,11 @@ interface IThemeContext {
   };
 }
 
-interface ProviderProps {
-  children: React.ReactNode;
-}
-
 // context
 const ThemeContext = React.createContext<IThemeContext>({});
 
 // provider
-function ThemeContextProvider(props: ProviderProps) {
+function ThemeContextProvider({ children }: any) {
   const colorScheme = useColorScheme();
   const translation = useTranslation(undefined, { keyPrefix: "theme" });
 
@@ -47,9 +43,7 @@ function ThemeContextProvider(props: ProviderProps) {
   };
 
   return (
-    <ThemeContext.Provider value={context}>
-      {props.children}
-    </ThemeContext.Provider>
+    <ThemeContext.Provider value={context}>{children}</ThemeContext.Provider>
   );
 }
 

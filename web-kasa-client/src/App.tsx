@@ -1,17 +1,39 @@
 import { RouterProvider } from "react-router-dom";
+
+import { router } from "./router";
+
+import { StyleProvider } from "./utils/StyleProvider";
 import { LanguageContextProvider } from "./contexts/LanguageContext";
 import { ThemeContextProvider } from "./contexts/ThemeContext";
-import { StyleProvider } from "./utils/StyleProvider";
-import { router } from "./router";
 import { AuthContextProvider } from "./contexts/AuthContext";
+import { SidebarContextProvider } from "./contexts/SidebarContext";
+import { AppStatusContextProvider } from "./contexts/AppStatusContext";
+
+import * as appStatusService from "./services/AppStatusService";
+import { AppLoading } from "./components/app-loading";
 
 function App() {
+  const appStatusQuery = appStatusService.getAppStatusQuery();
+
+  if (appStatusQuery.isLoading)
+    return (
+      <StyleProvider>
+        <AppLoading />
+      </StyleProvider>
+    );
+
+  const status = appStatusQuery.data?.value ?? null;
+
   return (
     <StyleProvider>
       <LanguageContextProvider>
         <ThemeContextProvider>
           <AuthContextProvider>
-            <RouterProvider router={router} />
+            <SidebarContextProvider>
+              <AppStatusContextProvider status={status}>
+                <RouterProvider router={router} />
+              </AppStatusContextProvider>
+            </SidebarContextProvider>
           </AuthContextProvider>
         </ThemeContextProvider>
       </LanguageContextProvider>

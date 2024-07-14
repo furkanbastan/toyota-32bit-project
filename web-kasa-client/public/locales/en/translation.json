@@ -6,5 +6,20 @@
   "theme": {
     "light": "Light Theme",
     "dark": "Dark Theme"
+  },
+  "login-page": {
+    "login": "Login",
+    "have-an-account": "Don't you have an account?",
+    "register": "Register!",
+    "error-message": "Usercode or Password is not correct!",
+    "usercode": "Usercode",
+    "usercode-placeholder": "Please enter your user code",
+    "usercode-required": "User code required!",
+    "password": "Password",
+    "password-placeholder": "•••••••••",
+    "password-required": "Password required!",
+    "password-min": "Password must be at least 5 digits.",
+    "remember-me": "Remember me!",
+    "login-button": "Login"
   }
 }
