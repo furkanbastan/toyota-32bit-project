@@ -1,0 +1,18 @@
+[
+  {
+    "usercode": "furkanbastan",
+    "password": "123456",
+    "firstname": "Furkan",
+    "surname": "Baştan",
+    "email": "furkanbastan@example.com",
+    "rolename": "Satış Personeli"
+  },
+  {
+    "usercode": "efebastan",
+    "password": "555555",
+    "firstname": "Efe",
+    "surname": "Baştan",
+    "email": "efebastan@example.com",
+    "rolename": "Admin"
+  }
+]
