@@ -21,5 +21,8 @@
     "password-min": "Password must be at least 5 digits.",
     "remember-me": "Remember me!",
     "login-button": "Login"
+  },
+  "not-found-page": {
+    "not-found": "Not Found Page!"
   }
 }

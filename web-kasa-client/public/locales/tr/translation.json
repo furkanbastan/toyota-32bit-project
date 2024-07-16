@@ -21,5 +21,8 @@
     "password-min": "Şifre en az 6 haneli olmalı.",
     "remember-me": "Beni hatırla!",
     "login-button": "Giriş Yap"
+  },
+  "not-found-page": {
+    "not-found": "Sayfa Bulunamadı!"
   }
 }

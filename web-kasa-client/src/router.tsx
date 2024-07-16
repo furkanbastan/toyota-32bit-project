@@ -1,8 +1,11 @@
 import { createBrowserRouter } from "react-router-dom";
-import { LoginPage } from "./pages/LoginPage";
-import { DashboardLayout } from "./layouts/DashboardLayout";
+
 import { PrivateRoute } from "./utils/PrivateRoute";
 import { PrivateLogin } from "./utils/PrivateLogin";
+
+import { DashboardLayout } from "./layouts/DashboardLayout";
+import { LoginPage } from "./pages/LoginPage";
+import { NotFoundPage } from "./pages/NotFoundPage";
 
 export const router = createBrowserRouter([
   {
@@ -26,5 +29,9 @@ export const router = createBrowserRouter([
         <LoginPage />
       </PrivateLogin>
     ),
+  },
+  {
+    path: "*",
+    element: <NotFoundPage />,
   },
 ]);
