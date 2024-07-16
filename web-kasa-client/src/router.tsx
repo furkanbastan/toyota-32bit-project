@@ -6,6 +6,7 @@ import { PrivateLogin } from "./utils/PrivateLogin";
 import { DashboardLayout } from "./layouts/DashboardLayout";
 import { LoginPage } from "./pages/LoginPage";
 import { NotFoundPage } from "./pages/NotFoundPage";
+import { ProductPage } from "./pages/ProductPage";
 
 export const router = createBrowserRouter([
   {
@@ -18,7 +19,7 @@ export const router = createBrowserRouter([
     children: [
       {
         path: "",
-        element: <div>outlet gelecek</div>,
+        element: <ProductPage />,
       },
     ],
   },
