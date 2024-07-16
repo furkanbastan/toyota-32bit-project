@@ -6,17 +6,11 @@ import AssessmentIcon from "@mui/icons-material/Assessment";
 import LayersIcon from "@mui/icons-material/Layers";
 import StoreMallDirectoryIcon from "@mui/icons-material/StoreMallDirectory";
 import InsertLinkIcon from "@mui/icons-material/InsertLink";
-import SpaceDashboardIcon from "@mui/icons-material/SpaceDashboard";
 import CategoryIcon from "@mui/icons-material/Category";
 
 export const MENU_ITEMS = [
   {
     href: "/",
-    name: "Ana Sayfa",
-    icon: <SpaceDashboardIcon />,
-  },
-  {
-    href: "/product",
     name: "Ürünler",
     icon: <CategoryIcon />,
   },
