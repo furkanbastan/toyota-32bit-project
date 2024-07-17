@@ -1,9 +1,13 @@
-import { linkClasses, Sheet, styled } from "@mui/joy";
+import { circularProgressClasses, linkClasses, styled } from "@mui/joy";
 
-export const ProductTable = styled(Sheet)(({ theme }) => ({
+export const ProductTable = styled("div")(({ theme }) => ({
   borderRadius: theme.radius.sm,
   overflow: "auto",
-  height: "calc(100vh - 240px)",
+  height: "calc(100vh - 200px)",
+  backgroundColor: theme.palette.background.surface,
+  border: "1px solid",
+  borderColor: theme.palette.divider,
+  position: "relative",
 
   table: {
     "--TableCell-headBackground": "var(--joy-palette-background-level1)",
@@ -38,18 +42,19 @@ export const ProductTable = styled(Sheet)(({ theme }) => ({
     width: 120,
   },
 
-  [theme.breakpoints.down("sm")]: {
-    display: "none",
-  },
-
   tbody: {
     "td:nth-of-type(1)": {
       textAlign: "center",
     },
+  },
 
-    "td:last-child": {
-      display: "flex",
-      alignItems: "center",
-    },
+  [`& .${circularProgressClasses.root}`]: {
+    position: "absolute",
+    top: "50%",
+    left: "50%",
+  },
+
+  [theme.breakpoints.down("md")]: {
+    height: "calc(100vh - 240px)",
   },
 }));

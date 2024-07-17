@@ -1,90 +1,35 @@
-import * as React from "react";
+import React from "react";
 
-import Button from "@mui/joy/Button";
-import Divider from "@mui/joy/Divider";
 import FormControl from "@mui/joy/FormControl";
-import FormLabel from "@mui/joy/FormLabel";
 import Input from "@mui/joy/Input";
-import Modal from "@mui/joy/Modal";
-import ModalDialog from "@mui/joy/ModalDialog";
-import ModalClose from "@mui/joy/ModalClose";
-import Select from "@mui/joy/Select";
-import Option from "@mui/joy/Option";
-import Sheet from "@mui/joy/Sheet";
-import IconButton from "@mui/joy/IconButton";
-import Typography from "@mui/joy/Typography";
 
-import FilterAltIcon from "@mui/icons-material/FilterAlt";
 import SearchIcon from "@mui/icons-material/Search";
 
+import { useProductPageActions } from "../../../contexts/ProductPageContext";
 import * as S from "./styled";
 
 function FilterSection() {
-  const [openFilterModal, setOpenFilterModal] = React.useState<boolean>(false);
+  const [searchTerm, setSearchTerm] = React.useState<string>("");
 
-  const filters = () => (
-    <>
-      <FormControl size="sm">
-        <FormLabel>Status</FormLabel>
-        <Select size="sm" placeholder="Filter by status">
-          <Option value="paid">Paid</Option>
-          <Option value="pending">Pending</Option>
-          <Option value="refunded">Refunded</Option>
-          <Option value="cancelled">Cancelled</Option>
-        </Select>
-      </FormControl>
-      <FormControl size="sm">
-        <FormLabel>Category</FormLabel>
-        <Select size="sm" placeholder="All">
-          <Option value="all">All</Option>
-          <Option value="refund">Refund</Option>
-          <Option value="purchase">Purchase</Option>
-          <Option value="debit">Debit</Option>
-        </Select>
-      </FormControl>
-    </>
-  );
+  const productPageActions = useProductPageActions();
+
+  function handleChangeSearchInput(e: React.ChangeEvent<HTMLInputElement>) {
+    setSearchTerm(e.target.value);
+    productPageActions.setSearchTerm(e.target.value);
+  }
+
   return (
-    <>
-      <S.FilterSection>
-        <FormControl>
-          <FormLabel>Search for category.</FormLabel>
-          <Input
-            size="sm"
-            placeholder="Ürün adı veya Barkod giriniz..."
-            startDecorator={<SearchIcon />}
-          />
-        </FormControl>
-        {filters()}
-      </S.FilterSection>
-
-      <S.FilterSectionMobile>
-        <Input size="sm" placeholder="Search" startDecorator={<SearchIcon />} />
-        <IconButton
+    <S.FilterSection>
+      <FormControl>
+        <Input
           size="sm"
-          variant="outlined"
-          color="neutral"
-          onClick={() => setOpenFilterModal(true)}
-        >
-          <FilterAltIcon />
-        </IconButton>
-        <Modal open={openFilterModal} onClose={() => setOpenFilterModal(false)}>
-          <ModalDialog aria-labelledby="filter-modal" layout="fullscreen">
-            <ModalClose />
-            <Typography id="filter-modal" level="h2">
-              Filters
-            </Typography>
-            <Divider sx={{ my: 2 }} />
-            <Sheet sx={{ display: "flex", flexDirection: "column", gap: 2 }}>
-              {filters()}
-              <Button color="primary" onClick={() => setOpenFilterModal(false)}>
-                Submit
-              </Button>
-            </Sheet>
-          </ModalDialog>
-        </Modal>
-      </S.FilterSectionMobile>
-    </>
+          placeholder="Ürün adı veya Barkod giriniz..."
+          value={searchTerm}
+          onChange={handleChangeSearchInput}
+          startDecorator={<SearchIcon />}
+        />
+      </FormControl>
+    </S.FilterSection>
   );
 }
 

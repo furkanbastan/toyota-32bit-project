@@ -8,8 +8,4 @@ export const PaginationSection = styled("div")(({ theme }) => ({
   [`& .${iconButtonClasses.root}`]: {
     borderRadius: "50%",
   },
-
-  [theme.breakpoints.down("md")]: {
-    display: "none",
-  },
 }));

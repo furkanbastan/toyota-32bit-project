@@ -22,7 +22,7 @@ function ProductTableRowMenu() {
 
         <Divider />
 
-        <MenuItem color="danger">Delete</MenuItem>
+        <MenuItem color="danger">Sil</MenuItem>
       </Menu>
     </Dropdown>
   );
