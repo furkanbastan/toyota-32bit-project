@@ -7,8 +7,11 @@ import { AppLogo } from "../../components/app-logo";
 
 import { LoginCard } from "./login-card";
 import * as S from "./styled";
+import { useAppStatus } from "../../contexts/AppStatusContext";
 
 function LoginPageContainer() {
+  const appStatus = useAppStatus();
+
   return (
     <>
       <S.LoginPageContainer>
@@ -24,7 +27,9 @@ function LoginPageContainer() {
 
         <S.Footer>
           <Typography level="body-xs">
-            {`@${new Date().getFullYear()} | Toyota&32Bit`}
+            {`@${new Date().getFullYear()} | Toyota&32Bit | ${
+              appStatus.status?.version
+            }`}
           </Typography>
         </S.Footer>
       </S.LoginPageContainer>
