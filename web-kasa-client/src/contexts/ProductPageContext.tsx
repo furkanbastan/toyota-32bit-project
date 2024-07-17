@@ -6,10 +6,15 @@ interface IProductPageContext {
   state?: {
     products?: ProductModel[];
     filteredProducts: ProductModel[];
+    pageCount: number;
+    pageSize: number;
+    currentPage: number;
   };
   actions?: {
     setProducts: (products: ProductModel[]) => any;
     setSearchTerm: (str: string) => any;
+    setCurrentPage: (page: number) => any;
+    getPaginatedProducts: () => ProductModel[];
   };
 }
 
@@ -26,11 +31,17 @@ function ProductPageContextProvider(props: ProviderProps) {
   const [filteredProducts, setFilteredProducts] = React.useState<
     ProductModel[]
   >([]);
+  const [currentPage, setCurrentPage] = React.useState<number>(1);
+
+  const pageSize = 14;
 
   const context: IProductPageContext = {
     state: {
       products,
       filteredProducts,
+      pageCount: Math.ceil(filteredProducts.length / pageSize),
+      pageSize,
+      currentPage,
     },
 
     actions: {
@@ -50,6 +61,13 @@ function ProductPageContextProvider(props: ProviderProps) {
             v.title.toLocaleLowerCase().includes(str.toLocaleLowerCase())
           )
         );
+      },
+
+      setCurrentPage: (page) => setCurrentPage(page),
+
+      getPaginatedProducts: () => {
+        const startIndex = (currentPage - 1) * pageSize;
+        return filteredProducts.slice(startIndex, startIndex + pageSize);
       },
     },
   };

@@ -7,14 +7,10 @@ import * as productService from "../../../services/ProductService";
 import { ProductTableRowMenu } from "../product-table-row-menu";
 import * as S from "./styled";
 import React from "react";
-import {
-  useProductPage,
-  useProductPageActions,
-} from "../../../contexts/ProductPageContext";
+import { useProductPageActions } from "../../../contexts/ProductPageContext";
 
 function ProductTable() {
   const productsQuery = productService.getProductsQuery();
-  const productPage = useProductPage();
   const productPageActions = useProductPageActions();
 
   React.useEffect(() => {
@@ -40,7 +36,7 @@ function ProductTable() {
             </tr>
           </thead>
           <tbody>
-            {productPage.filteredProducts.map((v, i) => (
+            {productPageActions.getPaginatedProducts().map((v, i) => (
               <tr key={i}>
                 <td>
                   <Typography level="body-xs">{v.code}</Typography>
