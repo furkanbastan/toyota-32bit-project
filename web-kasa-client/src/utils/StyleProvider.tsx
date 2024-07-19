@@ -14,11 +14,7 @@ function StyleProvider({ children }: any) {
           ":root": {
             "--Header-height": "52px",
             "--Sidebar-width": "220px",
-            "--sales-page-container-width": "1500px",
-            "--sales-page-header-height": "60px",
-            "--sales-page-left-section-table-height": "75vh",
-            "--sales-page-middle-section-width": "240px",
-            "--sales-page-gap": theme.spacing(1.7),
+            "--sales-page-gap": theme.spacing(2),
 
             [theme.breakpoints.up("md")]: {
               "--Header-height": "0px",
