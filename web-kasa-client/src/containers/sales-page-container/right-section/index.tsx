@@ -1,28 +1,29 @@
 import { Input } from "@mui/joy";
 
 import { NumberKeyboard } from "../number-keyboard";
-import * as S from "./styled";
+import { TabSection } from "../tab-section";
 import { PaymentSection } from "../payment-section";
+import * as S from "./styled";
 
 function RightSection() {
-  return (
-    <S.RightSection>
-      <S.MiniHeader>
-        <Input
-          size="lg"
-          color="neutral"
-          variant="soft"
-          placeholder="Ödeme miktarı"
-        />
-      </S.MiniHeader>
+	return (
+		<S.RightSection>
+			<S.MiniHeader>
+				<Input
+					size="lg"
+					color="neutral"
+					variant="soft"
+					placeholder="Ödeme miktarı"
+				/>
+			</S.MiniHeader>
 
-      <S.Products>products</S.Products>
+			<TabSection />
 
-      <NumberKeyboard />
+			<NumberKeyboard />
 
-      <PaymentSection />
-    </S.RightSection>
-  );
+			<PaymentSection />
+		</S.RightSection>
+	);
 }
 
 export { RightSection };
