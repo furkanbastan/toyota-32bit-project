@@ -3,13 +3,13 @@ import TabList from "@mui/joy/TabList";
 import Tab from "@mui/joy/Tab";
 import TabPanel from "@mui/joy/TabPanel";
 
+import { Loading } from "../../../components/loading";
 import * as categoryService from "../../../services/CategoryService";
 import * as S from "./styled";
-import { Loading } from "../../../components/loading";
+import { CategoryCard } from "../../../components/category-card";
 
 function TabSection() {
 	const categoriesQuery = categoryService.getCategoriesQuery();
-	console.log(categoriesQuery);
 
 	return (
 		<S.TabSection>
@@ -21,6 +21,15 @@ function TabSection() {
 				</TabList>
 				<TabPanel value={0}>
 					{categoriesQuery.isLoading && <Loading />}
+					{categoriesQuery.data && categoriesQuery.data.isSuccess && (
+						<S.CategoryList>
+							{categoriesQuery.data.value!.map((v) => (
+								<S.CategoryItem key={v.id}>
+									<CategoryCard category={v} />
+								</S.CategoryItem>
+							))}
+						</S.CategoryList>
+					)}
 				</TabPanel>
 				<TabPanel value={1}>
 					<b>Second</b> tab panel

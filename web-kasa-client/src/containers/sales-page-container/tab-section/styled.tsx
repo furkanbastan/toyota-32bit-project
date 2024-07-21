@@ -26,5 +26,18 @@ export const TabSection = styled("div")(({ theme }) => ({
 
 	[`& .${tabPanelClasses.root}`]: {
 		padding: 0,
+		overflow: "auto",
 	},
+}));
+
+export const CategoryList = styled("nav")(({ theme }) => ({
+	display: "grid",
+	gridTemplateColumns: "1fr 1fr",
+	gap: theme.spacing(2),
+	paddingBlock: theme.spacing(2),
+}));
+
+export const CategoryItem = styled("div")(({}) => ({
+	alignSelf: "center",
+	justifySelf: "center",
 }));
