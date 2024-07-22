@@ -65,7 +65,7 @@ function TabSection() {
 							</S.ProductList>
 						)}
 				</TabPanel>
-				<TabPanel value={2}>favoriler</TabPanel>
+				<TabPanel value={2}>favoriler boş!</TabPanel>
 			</Tabs>
 		</S.TabSection>
 	);

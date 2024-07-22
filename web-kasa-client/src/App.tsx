@@ -9,6 +9,7 @@ import { AuthContextProvider } from "./contexts/AuthContext";
 import { SidebarContextProvider } from "./contexts/SidebarContext";
 import { AppStatusContextProvider } from "./contexts/AppStatusContext";
 import { SalesPageTabContextProvider } from "./contexts/SalesPageTabContext";
+import { FavoriteProductsContextProvider } from "./contexts/FavoriteProductsContext";
 
 import * as appStatusService from "./services/AppStatusService";
 import { AppLoading } from "./components/app-loading";
@@ -33,7 +34,9 @@ function App() {
 						<SidebarContextProvider>
 							<AppStatusContextProvider status={status}>
 								<SalesPageTabContextProvider>
-									<RouterProvider router={router} />
+									<FavoriteProductsContextProvider>
+										<RouterProvider router={router} />
+									</FavoriteProductsContextProvider>
 								</SalesPageTabContextProvider>
 							</AppStatusContextProvider>
 						</SidebarContextProvider>

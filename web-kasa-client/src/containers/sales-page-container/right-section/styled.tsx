@@ -1,4 +1,4 @@
-import { styled } from "@mui/joy";
+import { inputClasses, styled } from "@mui/joy";
 
 export const RightSection = styled("div")(({ theme }) => ({
 	flex: 1,
@@ -15,4 +15,10 @@ export const RightSection = styled("div")(({ theme }) => ({
 
 export const MiniHeader = styled("div")(({}) => ({
 	gridColumn: "1/-1",
+	display: "flex",
+	gap: "var(--sales-page-gap)",
+
+	[`& .${inputClasses.root}`]: {
+		flex: 1,
+	},
 }));
