@@ -40,4 +40,5 @@ export const CategoryList = styled("nav")(({ theme }) => ({
 export const CategoryItem = styled("div")(({}) => ({
 	alignSelf: "center",
 	justifySelf: "center",
+	cursor: "pointer",
 }));
