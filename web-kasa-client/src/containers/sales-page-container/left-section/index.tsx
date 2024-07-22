@@ -3,6 +3,7 @@ import React from "react";
 import FlipRoundedIcon from "@mui/icons-material/FlipRounded";
 import CheckRoundedIcon from "@mui/icons-material/CheckRounded";
 import DialpadIcon from "@mui/icons-material/Dialpad";
+import ClearIcon from "@mui/icons-material/Clear";
 
 import Input from "@mui/joy/Input";
 import IconButton from "@mui/joy/IconButton";
@@ -65,6 +66,7 @@ function LeftSection() {
 							<th>Adet/Gram</th>
 							<th>Fiyat(TL)</th>
 							<th>Toplam(TL)</th>
+							<th></th>
 						</tr>
 					</thead>
 					<tbody>
@@ -75,6 +77,11 @@ function LeftSection() {
 							<td>2 AD</td>
 							<td>1250.00 TL</td>
 							<td>2500.00 TL</td>
+							<td>
+								<IconButton size="sm" color="danger" variant="outlined">
+									<ClearIcon />
+								</IconButton>
+							</td>
 						</tr>
 					</tbody>
 				</Table>
