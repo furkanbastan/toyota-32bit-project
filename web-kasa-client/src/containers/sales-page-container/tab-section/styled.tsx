@@ -42,3 +42,14 @@ export const CategoryItem = styled("div")(({}) => ({
 	justifySelf: "center",
 	cursor: "pointer",
 }));
+
+export const ProductList = styled("nav")(({ theme }) => ({
+	padding: theme.spacing(2),
+	display: "flex",
+	flexDirection: "column",
+	gap: theme.spacing(2),
+}));
+
+export const ProductItem = styled("div")(({}) => ({
+	cursor: "pointer",
+}));

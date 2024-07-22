@@ -11,12 +11,17 @@ import {
 	useSalesPageTab,
 	useSalesPageTabActions,
 } from "../../../contexts/SalesPageTabContext";
+import * as productService from "../../../services/ProductService";
 
 import * as S from "./styled";
+import { Loading } from "../../../components/loading";
+import { ProductCard } from "../../../components/product-card";
 
 function TabSection() {
 	const tab = useSalesPageTab();
 	const tabActions = useSalesPageTabActions();
+
+	const productsQuery = productService.getProductsQuery(1);
 
 	return (
 		<S.TabSection>
@@ -47,11 +52,20 @@ function TabSection() {
 					<CategoryTab />
 				</TabPanel>
 				<TabPanel value={1}>
-					<b>Second</b> tab panel
+					{productsQuery.isLoading && <Loading />}
+					{!productsQuery.isLoading &&
+						productsQuery.data !== undefined &&
+						productsQuery.data.isSuccess && (
+							<S.ProductList>
+								{productsQuery.data.value?.map((v) => (
+									<S.ProductItem key={v.id}>
+										<ProductCard product={v} />
+									</S.ProductItem>
+								))}
+							</S.ProductList>
+						)}
 				</TabPanel>
-				<TabPanel value={2}>
-					<b>Third</b> tab panel
-				</TabPanel>
+				<TabPanel value={2}>favoriler</TabPanel>
 			</Tabs>
 		</S.TabSection>
 	);
