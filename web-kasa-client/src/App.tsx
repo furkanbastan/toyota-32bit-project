@@ -13,6 +13,7 @@ import { FavoriteProductsContextProvider } from "./contexts/FavoriteProductsCont
 
 import * as appStatusService from "./services/AppStatusService";
 import { AppLoading } from "./components/app-loading";
+import { BasketContextProvider } from "./contexts/BasketContext";
 
 function App() {
 	const appStatusQuery = appStatusService.getAppStatusQuery();
@@ -35,7 +36,9 @@ function App() {
 							<AppStatusContextProvider status={status}>
 								<SalesPageTabContextProvider>
 									<FavoriteProductsContextProvider>
-										<RouterProvider router={router} />
+										<BasketContextProvider>
+											<RouterProvider router={router} />
+										</BasketContextProvider>
 									</FavoriteProductsContextProvider>
 								</SalesPageTabContextProvider>
 							</AppStatusContextProvider>
