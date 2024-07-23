@@ -1,30 +1,9 @@
 import React from "react";
-import { ProductModel } from "../models/ProductModel";
 
 // interfaces
 interface ISalesPageContext {
-	state?: {
-		sepet: {
-			totalPrice: number;
-			count: number;
-			product: ProductModel;
-		}[];
-		araToplam: number;
-		toplamIndirim: number;
-		toplamOdenecek: number;
-		nakitOdenen: number;
-		kartOdenen: number;
-		toplamOdenen: number;
-		kalanOdeme: number;
-		paraUstu: number;
-	};
-	actions?: {
-		belgeIptal: () => any;
-		belgeBitir: () => any;
-		kartIleOde: (tutar: number) => any;
-		nakitIleOde: (tutar: number) => any;
-		sepeteEkle: (product: ProductModel, count: number) => any;
-	};
+	state?: {};
+	actions?: {};
 }
 
 // context

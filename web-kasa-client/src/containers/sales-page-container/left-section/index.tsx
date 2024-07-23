@@ -26,6 +26,7 @@ function LeftSection() {
 		<S.LeftSection>
 			<S.Header>
 				<Input
+					autoFocus
 					color="success"
 					variant="soft"
 					size="lg"
