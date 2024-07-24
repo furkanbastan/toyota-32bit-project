@@ -10,12 +10,12 @@ import { CategoryTab } from "./category-tab";
 import {
 	useSalesPageTab,
 	useSalesPageTabActions,
-} from "../../../contexts/SalesPageTabContext";
-import * as productService from "../../../services/ProductService";
+} from "../../../../contexts/SalesPageTabContext";
+import * as productService from "../../../../services/ProductService";
 
 import * as S from "./styled";
-import { Loading } from "../../../components/loading";
-import { ProductCard } from "../../../components/product-card";
+import { Loading } from "../../../../components/loading";
+import { ProductCard } from "../../../../components/product-card";
 
 function TabSection() {
 	const tab = useSalesPageTab();

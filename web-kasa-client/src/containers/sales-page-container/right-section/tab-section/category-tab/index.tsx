@@ -1,15 +1,15 @@
-import { Loading } from "../../../../components/loading";
-import { CategoryCard } from "../../../../components/category-card";
-import * as categoryService from "../../../../services/CategoryService";
-import * as productService from "../../../../services/ProductService";
+import { Loading } from "../../../../../components/loading";
+import { CategoryCard } from "../../../../../components/category-card";
+import * as categoryService from "../../../../../services/CategoryService";
+import * as productService from "../../../../../services/ProductService";
 import {
 	useSalesPageTab,
 	useSalesPageTabActions,
-} from "../../../../contexts/SalesPageTabContext";
+} from "../../../../../contexts/SalesPageTabContext";
 
 import * as S from "./styled";
 import React from "react";
-import { ProductCard } from "../../../../components/product-card";
+import { ProductCard } from "../../../../../components/product-card";
 
 function CategoryTab() {
 	const categoriesQuery = categoryService.getCategoriesQuery();

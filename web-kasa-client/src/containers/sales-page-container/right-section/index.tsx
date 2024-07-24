@@ -1,33 +1,23 @@
-import { Input } from "@mui/joy";
+import { NumberKeyboard } from "./number-keyboard";
+import { TabSection } from "./tab-section";
+import { PaymentSection } from "./payment-section";
+import { MiniHeader } from "./mini-header";
+import { PaymentInfo } from "./payment-info";
 
-import { NumberKeyboard } from "../number-keyboard";
-import { TabSection } from "../tab-section";
-import { PaymentSection } from "../payment-section";
-import { CampaignButton } from "./campaign-button";
-import { ExitButton } from "./exit-button";
 import * as S from "./styled";
 
 function RightSection() {
 	return (
 		<S.RightSection>
-			<S.MiniHeader>
-				<Input
-					size="lg"
-					color="neutral"
-					variant="soft"
-					placeholder="Ödeme miktarı"
-				/>
-
-				<CampaignButton />
-
-				<ExitButton />
-			</S.MiniHeader>
+			<MiniHeader />
 
 			<TabSection />
 
 			<NumberKeyboard />
 
 			<PaymentSection />
+
+			<PaymentInfo />
 		</S.RightSection>
 	);
 }

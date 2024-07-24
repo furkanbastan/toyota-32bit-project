@@ -1,7 +1,7 @@
 import React from "react";
 import LogoutRoundedIcon from "@mui/icons-material/LogoutRounded";
 import IconButton from "@mui/joy/IconButton";
-import { Dialog } from "../../../../components/dialog";
+import { Dialog } from "../../../../../components/dialog";
 
 function ExitButton() {
 	const [open, setOpen] = React.useState<boolean>(false);
