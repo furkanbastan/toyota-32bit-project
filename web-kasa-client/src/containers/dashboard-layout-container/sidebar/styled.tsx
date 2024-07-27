@@ -4,7 +4,7 @@ export const Sidebar = styled("aside")(({ theme }) => ({
   position: "fixed",
   transform: "translateX(calc(100% * (var(--SideNavigation-slideIn, 0) - 1)))",
   transition: "transform 0.4s, width 0.4s",
-  zIndex: 2,
+  zIndex: 99,
   height: "100dvh",
   width: "var(--Sidebar-width)",
   top: 0,

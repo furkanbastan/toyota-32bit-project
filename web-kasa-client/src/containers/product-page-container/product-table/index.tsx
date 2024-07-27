@@ -10,7 +10,7 @@ import React from "react";
 import { useProductPageActions } from "../../../contexts/ProductPageContext";
 
 function ProductTable() {
-  const productsQuery = productService.getProductsQuery();
+  const productsQuery = productService.getProductsQuery(undefined);
   const productPageActions = useProductPageActions();
 
   React.useEffect(() => {

@@ -4,7 +4,7 @@ import { ProductModel } from "../models/ProductModel";
 // interfaces
 interface IBasketContext {
 	state?: {
-		sepet: {
+		sepet: { 
 			adet: number;
 			product: ProductModel;
 		}[];
